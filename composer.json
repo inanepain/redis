@@ -1,0 +1,44 @@
+{
+	"name": "inanepain/redis",
+	"description": "Wrapper around the php redis extension.",
+	"type": "library",
+	"keywords": [
+		"redis",
+		"db",
+		"wrapper",
+		"cache"
+	],
+	"homepage": "https://github.com/inanepain/redis",
+	"license": "MIT",
+	"authors": [{
+		"name": "Philip Michael Raab",
+		"email": "philip@inane.co.za",
+		"homepage": "https://inane.co.za",
+		"role": "Developer"
+	}],
+	"support": {
+		"email": "philip@inane.co.za",
+		"wiki": "https://git.inane.co.za:3000/inane/tools/wiki",
+		"issues": "https://git.inane.co.za:3000/inane/tools/issues"
+	},
+	"require": {
+		"php": ">=8.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Inane\\Redis\\": "./src/"
+		}
+	},
+	"minimum-stability": "dev",
+	"repositories": [{
+		"type": "composer",
+		"url": "https://packer.inane.co.za",
+		"name": "Inane Packer"
+	}],
+	"config": {
+		"preferred-install": "dist",
+		"optimize-autoloader": true,
+		"discard-changes": true,
+		"sort-packages": true
+	}
+}
