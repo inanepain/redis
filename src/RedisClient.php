@@ -39,7 +39,7 @@ class RedisClient {
     /**
      * Connection configuration
      *
-     * @var array
+     * @var array<string, string|string[]|int>
      */
     protected array $config = [
         'host' => '127.0.0.1',

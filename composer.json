@@ -3,6 +3,7 @@
 	"description": "Wrapper around the php redis extension.",
 	"type": "library",
 	"keywords": [
+		"inane",
 		"redis",
 		"db",
 		"wrapper",
@@ -10,6 +11,7 @@
 	],
 	"homepage": "https://github.com/inanepain/redis",
 	"license": "MIT",
+	"readme": "README.md",
 	"authors": [{
 		"name": "Philip Michael Raab",
 		"email": "philip@inane.co.za",
@@ -30,11 +32,6 @@
 		}
 	},
 	"minimum-stability": "dev",
-	"repositories": [{
-		"type": "composer",
-		"url": "https://packer.inane.co.za",
-		"name": "Inane Packer"
-	}],
 	"config": {
 		"preferred-install": "dist",
 		"optimize-autoloader": true,
