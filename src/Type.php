@@ -23,6 +23,14 @@ namespace Inane\Redis;
 /**
  * Value Types
  *
+ * redis data types:
+ *  - Redis::REDIS_STRING - String
+ *  - Redis::REDIS_SET - Set
+ *  - Redis::REDIS_LIST - List
+ *  - Redis::REDIS_ZSET - Sorted set
+ *  - Redis::REDIS_HASH - Hash
+ *  - Redis::REDIS_NOT_FOUND - Not found / other
+ *
  * @version 1.0.0
  * @package Inane\Redis
  */
@@ -34,6 +42,4 @@ enum Type: int {
     case HASH = 5;
     case STREAM = 6;
     case OTHER = 0;
-
-
 }

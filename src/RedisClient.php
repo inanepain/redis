@@ -96,7 +96,6 @@ class RedisClient {
     private function getConnection(): Redis {
         if (!isset($this->connection)) {
             $this->connection = new Redis();
-            $this->connection = new Redis();
             $this->state = $this->connection->connect(...$this->config) ? State::OPEN : State::CLOSED;
         }
         return $this->connection;
@@ -199,7 +198,7 @@ class RedisClient {
             if (!$this->cache($key)) $this->type($key);
         else; else if ($this->cache($key)) unset(static::$typeCache[$this->dbIndex][$key]);
 
-        return $exists;
+        return (bool)$exists;
     }
 
     /**
@@ -213,5 +212,86 @@ class RedisClient {
         if (!$this->cache($key)) static::$typeCache[$this->dbIndex][$key] = Type::from($this->getConnection()->type($key));
 
         return $this->cache($key);
+    }
+
+    /**
+     * Get the value related to the specified key
+     *
+     * expire_unit
+     *  - EX:  expire time in seconds
+     *  - PX:  expire time in milliseconds
+     *  - EXAT:  expire time in seconds since UNIX epoch
+     *  - PXAT:  expire time in milliseconds since UNIX epoch
+     *  - PERSIST:  remove the expiration from the key
+     *
+     * @param string $key name
+     * @param array|null $expire [expire_unit => time] e.g. ['EX' => 10] expire in ten seconds
+     *
+     * @return string|bool value or *false* if key does not exist
+     */
+    public function get(string $key, ?array $expire = null): string|bool {
+        if ($expire)
+            return $this->getConnection()->getEx($key, $expire);
+
+        return $this->getConnection()->get($key);
+    }
+
+    /**
+     * Get the value related to the specified key
+     *
+     * expire_unit
+     *  - EX:  expire time in seconds
+     *  - PX:  expire time in milliseconds
+     *  - EXAT:  expire time in seconds since UNIX epoch
+     *  - PXAT:  expire time in milliseconds since UNIX epoch
+     *  - PERSIST:  remove the expiration from the key
+     *
+     * expire
+     * The array can take two values.
+     *  - the *expire_unit* with the *time* as its value
+     *  - *XX* set if key does NOT exist or *NX* set if key exist
+     *
+     * @param string $key name
+     * @param string|int $value the value
+     * @param int|array|null $expire [expire_unit => time] e.g. ['EX' => 10] expire in ten seconds OR only if key exists ['XX', 'EX' => 10]
+     *
+     * @return string|bool value or *false* if key does not exist
+     */
+    public function set(string $key, int|string $value, int|array|null $expire = null): string|bool {
+        if ($expire)
+            return $this->getConnection()->set($key, $value, $expire);
+            // return $this->getConnection()->setEx($key, $value, $expire);
+
+        return $this->getConnection()->set($key, $value);
+    }
+
+    /**
+     * Increment the number stored at key by one. If the second argument is filled, it will be used as the integer value of the increment
+     *
+     * @param string $key name
+     * @param int|null $value amount to increment value
+     *
+     * @return string|int the new value
+     */
+    public function incr(string $key, ?int $value = null): string|int {
+        if ($value)
+            return $this->getConnection()->incr($key, $value);
+
+        return $this->getConnection()->incr($key);
+    }
+
+    /**
+     * Decrement the number stored at key by one. If the second argument is filled, it will be used as the integer value of the decrement
+     *
+     * @param string $key name
+     * @param int|null $value amount to decrement value
+     *
+     * @return string|int the new value
+     */
+    public function decr(string $key, ?int $value = null): string|int {
+        if ($value)
+            return $this->getConnection()->decr($key, $value);
+
+        return $this->getConnection()->decr($key);
     }
 }
