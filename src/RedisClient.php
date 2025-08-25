@@ -1,13 +1,31 @@
 <?php
 
+/**
+ * Inane: Redis
+ *
+ * Wrapper around the php redis extension.
+ *
+ * $Id$
+ * $Date$
+ *
+ * PHP version 8.4
+ *
+ * @author Philip Michael Raab<philip@cathedral.co.za>
+ * @package inanepain\redis
+ * @category redis
+ *
+ * @license UNLICENSE
+ * @license https://unlicense.org/UNLICENSE UNLICENSE
+ *
+ * _version_ $version
+ */
+
 declare(strict_types=1);
 
 namespace Inane\Redis;
 
-use Lab\Redis\Types\TypeInterface;
 use Redis;
 
-use function array_key_exists;
 use function class_exists;
 
 use Inane\Redis\Exceptions\{
@@ -19,7 +37,6 @@ use Inane\Redis\Exceptions\{
  * Redis Client
  *
  * @version 0.1.0
- * @package Lab\Redis
  */
 class RedisClient {
     /**

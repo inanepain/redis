@@ -1,20 +1,25 @@
 <?php
+
 /**
- * Inane Redis
+ * Inane: Redis
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * Wrapper around the php redis extension.
  *
- * PHP version 8
+ * $Id$
+ * $Date$
  *
- * @author Philip Michael Raab <philip@inane.co.za>
- * @package Inane\Exception
+ * PHP version 8.4
  *
- * @license MIT
- * @license https://inane.co.za/license/MIT
+ * @author Philip Michael Raab<philip@cathedral.co.za>
+ * @package inanepain\redis
+ * @category redis
  *
- * @copyright 2015-2021 Philip Michael Raab <philip@inane.co.za>
+ * @license UNLICENSE
+ * @license https://unlicense.org/UNLICENSE UNLICENSE
+ *
+ * _version_ $version
  */
+
 declare(strict_types=1);
 
 namespace Inane\Redis\Exceptions;
@@ -24,8 +29,6 @@ use Throwable;
 
 /**
  * Exception
- *
- * @package Inane\Exception
  *
  * @version 0.3.0
  */

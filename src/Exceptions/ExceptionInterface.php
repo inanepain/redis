@@ -1,18 +1,23 @@
 <?php
 
 /**
- * This file is part of the InaneTools package.
+ * Inane: Redis
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * Wrapper around the php redis extension.
  *
- * @author Philip Michael Raab <philip@inane.co.za>
- * @package Inane\Exception
+ * $Id$
+ * $Date$
  *
- * @license MIT
- * @license https://inane.co.za/license/MIT
+ * PHP version 8.4
  *
- * @copyright 2015-2019 Philip Michael Raab <philip@inane.co.za>
+ * @author Philip Michael Raab<philip@cathedral.co.za>
+ * @package inanepain\redis
+ * @category redis
+ *
+ * @license UNLICENSE
+ * @license https://unlicense.org/UNLICENSE UNLICENSE
+ *
+ * _version_ $version
  */
 
 /**
@@ -63,8 +68,6 @@ namespace Inane\Redis\Exceptions;
 
 /**
  * ExceptionInterface
- *
- * @package Inane\Exception
  *
  * @version 1.0.0
  */

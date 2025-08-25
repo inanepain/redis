@@ -1,10 +1,29 @@
 <?php
 
+/**
+ * Inane: Redis
+ *
+ * Wrapper around the php redis extension.
+ *
+ * $Id$
+ * $Date$
+ *
+ * PHP version 8.4
+ *
+ * @author Philip Michael Raab<philip@cathedral.co.za>
+ * @package inanepain\redis
+ * @category redis
+ *
+ * @license UNLICENSE
+ * @license https://unlicense.org/UNLICENSE UNLICENSE
+ *
+ * _version_ $version
+ */
+
 declare(strict_types=1);
 
 namespace Inane\Redis\Types;
 
-use Exception;
 use Redis;
 
 use function call_user_func_array;
@@ -13,7 +32,6 @@ use function method_exists;
 use Inane\Redis\{
     Exceptions\ExceptionCode,
     Exceptions\LogicException,
-    Exceptions\TypeSetupException,
     RedisClient,
     Type
 };
@@ -22,7 +40,6 @@ use Inane\Redis\{
  * Redis String Type
  *
  * @version 0.1.0
- * @package Lab\Redis
  */
 abstract class AbstractType implements TypeInterface {
     public function __construct(
