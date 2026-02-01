@@ -24,7 +24,8 @@
 		"issues": "https://git.inane.co.za:3000/inane/tools/issues"
 	},
 	"require": {
-		"php": ">=8.1"
+		"php": ">=8.5",
+        "ext-redis": "*"
 	},
 	"autoload": {
 		"psr-4": {
