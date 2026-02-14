@@ -1,0 +1,32 @@
+= inanepain/redis image:./icon.png[title=inanepain/redis,25]
+:author: Philip Michael Raab
+:email: <philip@cathedral.co.za>
+:description: Wrapper around the php redis extension.
+:keywords: inanepain, library, redis, db, wrapper, cache
+:homepage: https://github.com/inanepain/redis
+:revnumber: 0.1.0
+:revdate: 2026-xx-xx
+:copyright: Unlicense
+:experimental:
+:hide-uri-scheme:
+:icons: font
+:source-highlighter: highlight.js
+:toc: left
+:sectanchors:
+:idprefix: topic-
+:idseparator: -
+:pkg-vendor: inanepain
+:pkg-name: redis
+:pkg-id: {pkg-vendor}/{pkg-name}
+
+== image:./icon.png[title={pkg-id},25] {pkg-id}
+
+{description}
+
+:sectnums:
+
+<<<
+
+include::./part/install.adoc[leveloffset=+1]
+
+<<<
