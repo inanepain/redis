@@ -8,7 +8,7 @@
  * $Id$
  * $Date$
  *
- * PHP version 8.4
+ * PHP version 8.5
  *
  * @author Philip Michael Raab<philip@cathedral.co.za>
  * @package inanepain\redis
@@ -24,17 +24,14 @@ declare(strict_types=1);
 
 namespace Inane\Redis\Types;
 
-use Redis;
-
-use function call_user_func_array;
-use function method_exists;
-
 use Inane\Redis\{
     Exceptions\ExceptionCode,
     Exceptions\LogicException,
     RedisClient,
-    Type
-};
+    Type};
+
+use function call_user_func_array;
+use function method_exists;
 
 /**
  * Redis String Type

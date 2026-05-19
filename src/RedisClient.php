@@ -8,7 +8,7 @@
  * $Id$
  * $Date$
  *
- * PHP version 8.4
+ * PHP version 8.5
  *
  * @author Philip Michael Raab<philip@cathedral.co.za>
  * @package inanepain\redis
@@ -24,14 +24,12 @@ declare(strict_types=1);
 
 namespace Inane\Redis;
 
+use Inane\Redis\Exceptions\{
+    ExceptionCode,
+    RuntimeException};
 use Redis;
 
 use function class_exists;
-
-use Inane\Redis\Exceptions\{
-    ExceptionCode,
-    RuntimeException
-};
 
 /**
  * Redis Client
@@ -163,7 +161,7 @@ class RedisClient {
      */
     public function swapDb(int $db1, int $db2): bool {
         if ($this->getConnection()->swapdb($db1, $db2)) {
-            list(static::$typeCache[$db1], static::$typeCache[$db2]) = [static::$typeCache[$db2], static::$typeCache[$db1]];
+            [static::$typeCache[$db1], static::$typeCache[$db2]] = [static::$typeCache[$db2], static::$typeCache[$db1]];
             return true;
         }
 
