@@ -1,4 +1,5 @@
 = inanepain/redis image:./icon.png[title=inanepain/redis,25]
+// tag::tagConfig[]
 :author: Philip Michael Raab
 :email: <philip@cathedral.co.za>
 :description: Wrapper around the php redis extension.
@@ -18,6 +19,7 @@
 :pkg-vendor: inanepain
 :pkg-name: redis
 :pkg-id: {pkg-vendor}/{pkg-name}
+// end::tagConfig[]
 
 == image:./icon.png[title={pkg-id},25] {pkg-id}
 
