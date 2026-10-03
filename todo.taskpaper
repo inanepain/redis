@@ -1,2 +1,4 @@
 inanepain/redis:
-  Wrapper around the php redis extension.
+	Wrapper around the php redis extension.
+	- git-attributes
+	- tests: create test case. @PHPUnit
